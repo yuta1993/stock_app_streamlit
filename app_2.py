@@ -27,7 +27,7 @@ st.write(
 )
 
 st.write(
-    "google, apple, amazon, facebook(meta), microsoft, netflix"
+    "google, apple, amazon, facebook(meta), microsoft, netflix, tesla, トヨタ自動車, NTT(日本電信電話), ソフトバンク"
 )
 
 def get_data(days, tickers):
@@ -58,7 +58,10 @@ try:
         'google': 'GOOGL',
         'microsoft': 'MSFT',
         'netflix': 'NFLX',
-        'amazon': 'AMZN'
+        'amazon': 'AMZN',
+        'tesla': 'TSLA',
+        'トヨタ自動車': 'TM',
+
     }
     df = get_data(days, tickers)
     companies = st.multiselect(
@@ -86,7 +89,11 @@ try:
             )
         )
         st.altair_chart(chart, use_container_width=True)
-except:
+except Exception as e:
+    print(e.__class__.__name__) # ZeroDivisionError
+    print(e.args) # ('division by zero',)
+    print(e) # division by zero
+    print(f"{e.__class__.__name__}: {e}") # ZeroDivisionError: division by zero
     st.error(
         "エラーが起きているようです。"
     )
