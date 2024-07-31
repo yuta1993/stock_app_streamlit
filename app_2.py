@@ -27,7 +27,7 @@ st.write(
 )
 
 st.write(
-    "google, apple, amazon, facebook(meta), microsoft, netflix, tesla, トヨタ自動車, NTT(日本電信電話), ソフトバンク"
+    "google, apple, amazon, facebook(meta), microsoft, netflix"
 )
 
 def get_data(days, tickers):
@@ -58,10 +58,7 @@ try:
         'google': 'GOOGL',
         'microsoft': 'MSFT',
         'netflix': 'NFLX',
-        'amazon': 'AMZN',
-        'tesla': 'TSLA',
-        'トヨタ自動車': 'TM',
-
+        'amazon': 'AMZN'
     }
     df = get_data(days, tickers)
     companies = st.multiselect(
@@ -89,9 +86,7 @@ try:
             )
         )
         st.altair_chart(chart, use_container_width=True)
-except Exception as e:
-    # raise Exception(f"エラーが発生しました。詳細：{e}")
-    print(e)
+except:
     st.error(
-        "エラーが起きているようです!!!"
+        "エラーが起きているようです!"
     )
