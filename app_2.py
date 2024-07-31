@@ -90,10 +90,8 @@ try:
         )
         st.altair_chart(chart, use_container_width=True)
 except Exception as e:
-    print(e)
+    raise Exception(f"エラーが発生しました。詳細：{e}")
+    # print(e)
     st.error(
         "エラーが起きているようです!!!"
     )
-
-finally:
-    print("最終")
