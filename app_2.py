@@ -95,5 +95,5 @@ except Exception as e:
     print(e) # division by zero
     print(f"{e.__class__.__name__}: {e}") # ZeroDivisionError: division by zero
     st.error(
-        "エラーが起きているようです。"
+        "エラーが起きているようです！"
     )
