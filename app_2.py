@@ -94,3 +94,6 @@ except Exception as e:
     st.error(
         "エラーが起きているようです!!!"
     )
+
+finally:
+    print("最終")
