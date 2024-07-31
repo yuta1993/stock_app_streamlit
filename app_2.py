@@ -90,10 +90,7 @@ try:
         )
         st.altair_chart(chart, use_container_width=True)
 except Exception as e:
-    print(e.__class__.__name__) # ZeroDivisionError
-    print(e.args) # ('division by zero',)
-    print(e) # division by zero
-    print(f"{e.__class__.__name__}: {e}") # ZeroDivisionError: division by zero
+    print(e)
     st.error(
         "エラーが起きているようです！"
     )
