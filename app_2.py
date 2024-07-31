@@ -15,6 +15,7 @@ st.sidebar.write("""
 ## ①表示日数選択
 """)
 
+
 days = st.sidebar.slider('日数', 1, 50, 20)
 
 st.write(f"""
