@@ -92,5 +92,5 @@ try:
 except Exception as e:
     print(e)
     st.error(
-        "エラーが起きているようです！"
+        "エラーが起きているようです!!!"
     )
