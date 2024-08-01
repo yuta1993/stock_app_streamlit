@@ -31,14 +31,13 @@ st.write(
     "google, apple, amazon, meta, microsoft, netflix"
 )
 
-@st.cache
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
         tkr = yf.Ticker(tickers[company])
         hist = tkr.history(period=f'{days}d')
-        # hist.index = hist.index.strftime('%d %B %Y')
-        hist.index = hist.index.to_series().apply(lambda x: x.strftime('%d %B %Y'))
+        hist.index = hist.index.strftime('%d %B %Y')
+        # hist.index = hist.index.to_series().apply(lambda x: x.strftime('%d %B %Y'))
         hist = hist[['Close']]
         hist.columns = [company]
         hist = hist.T
