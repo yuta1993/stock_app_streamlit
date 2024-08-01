@@ -28,7 +28,7 @@ st.write(
 )
 
 st.write(
-    "google, apple, amazon, facebook(meta), microsoft, netflix"
+    "google, apple, amazon, meta, microsoft, netflix"
 )
 
 @st.cache
