@@ -2,7 +2,6 @@ import pandas as pd
 import yfinance as yf
 import altair as alt
 import streamlit as st
-import datetime
 
 
 st.title('有名米国株可視化アプリ')
@@ -32,12 +31,13 @@ st.write(
     "google, apple, amazon, facebook(meta), microsoft, netflix"
 )
 
+@st.cache
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
         tkr = yf.Ticker(tickers[company])
         hist = tkr.history(period=f'{days}d')
-        hist.index = hist.index.strftime('%D %B %Y')
+        hist.index = hist.index.strftime('%d %B %Y')
         hist = hist[['Close']]
         hist.columns = [company]
         hist = hist.T
@@ -66,7 +66,7 @@ try:
     companies = st.multiselect(
         '企業名を選択してください。',
         list(df.index),
-        ['google', 'amazon', 'facebook(meta)', 'apple']
+        ['google', 'amazon', 'meta', 'apple']
     )
 
     if not companies:
