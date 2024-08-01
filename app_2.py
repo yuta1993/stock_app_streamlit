@@ -2,6 +2,7 @@ import pandas as pd
 import yfinance as yf
 import altair as alt
 import streamlit as st
+import datetime
 
 
 st.title('有名米国株可視化アプリ')
@@ -56,7 +57,7 @@ try:
     tickers = {
         'apple': 'AAPL',
         'facebook(meta)': 'META',
-        'google': 'GOOG',
+        'google': 'GOOGL',
         'microsoft': 'MSFT',
         'netflix': 'NFLX',
         'amazon': 'AMZN'
