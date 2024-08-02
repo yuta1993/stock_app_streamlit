@@ -1,4 +1,4 @@
-pandas
+pandas==1.4.3
 yfinance==0.2.33
 altair
 streamlit
